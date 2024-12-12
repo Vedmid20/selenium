@@ -19,6 +19,7 @@ class XPATH:
 
     def select_li(self, index):
         element_li = self.driver.find_element(By.XPATH, f"//ul//li[@id='item-{index}']")
+        self.driver.execute_script("arguments[0].scrollIntoView(true);", element_li)
         assert element_li.is_displayed(), f"Error: List item with index {index} not found"
         element_li.click()
         time.sleep(2)
@@ -131,3 +132,23 @@ class XPATH:
         assert element.is_displayed(), "Error: Right Click button not found"
         actions.context_click(element).perform()
         time.sleep(2)
+
+    def go_to_link(self, id):
+        element = self.driver.find_element(By.XPATH, f'//p//a[@id="{id}"]')
+        self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
+        element.click()
+        time.sleep(1)
+        element_result = self.driver.find_element(By.XPATH, '//p[@id="linkResponse"]')
+        assert element_result.is_displayed(), 'Error: Result text not found'
+        time.sleep(1)
+
+    def click_on_link_by_text(self, text):
+        element = self.driver.find_element(By.XPATH, f'//a[text()="{text}"]')
+        self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
+        element.click()
+        time.sleep(2)
+
+    def select_li_codes(self, code):
+        element = self.driver.find_element(By.XPATH, f'//li[text()="{code}"]')
+        element.click()
+        time.sleep(3)
