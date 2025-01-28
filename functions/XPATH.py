@@ -146,19 +146,29 @@ class XPATH:
         actions.context_click(element).perform()
         time.sleep(3)
 
+        time.sleep(2)
+
     def go_to_link(self, id):
         element = self.driver.find_element(By.XPATH, f'//p//a[@id="{id}"]')
         self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
         element.click()
+
         time.sleep(2)
         element_result = self.driver.find_element(By.XPATH, '//p[@id="linkResponse"]')
         assert element_result.is_displayed(), 'Error: Result text not found'
         time.sleep(2)
 
+        time.sleep(1)
+        element_result = self.driver.find_element(By.XPATH, '//p[@id="linkResponse"]')
+        assert element_result.is_displayed(), 'Error: Result text not found'
+        time.sleep(1)
+
+
     def click_on_link_by_text(self, text):
         element = self.driver.find_element(By.XPATH, f'//a[text()="{text}"]')
         self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
         element.click()
+
         time.sleep(3)
 
     def select_li_codes(self, code):
@@ -174,5 +184,9 @@ class XPATH:
 
     def download_file(self):
         element = self.driver.find_element(By.XPATH, "//div//a[@id='downloadButton']")
+        time.sleep(2)
+
+    def select_li_codes(self, code):
+        element = self.driver.find_element(By.XPATH, f'//li[text()="{code}"]')
         element.click()
         time.sleep(3)
