@@ -1,3 +1,4 @@
+import time
 from functions.XPATH import XPATH
 
 
@@ -53,3 +54,40 @@ def go():
     xpath.search_record('Alden')
     xpath.select_li(4)
     xpath.click_button()
+
+    xpath.select_li(5)
+    xpath.go_to_link('created')
+    xpath.go_to_link('no-content')
+    xpath.go_to_link('moved')
+    xpath.go_to_link('bad-request')
+    xpath.go_to_link('unauthorized')
+    xpath.go_to_link('forbidden')
+    xpath.go_to_link('invalid-url')
+
+    xpath.select_li(6)
+    xpath.click_on_link_by_text('Click Here for Valid Link')
+    xpath.go_to_elements()
+    xpath.select_li(6)
+    xpath.click_on_link_by_text('Click Here for Broken Link')
+    xpath.click_on_link_by_text('here')
+
+    xpath.select_li_codes('200')
+    xpath.click_on_link_by_text('here')
+
+    xpath.select_li_codes('301')
+    xpath.click_on_link_by_text('here')
+
+    xpath.select_li_codes('404')
+    xpath.click_on_link_by_text('here')
+
+    xpath.select_li_codes('500')
+    xpath.click_on_link_by_text('here')
+
+    xpath.site()
+    xpath.go_to_elements()
+    xpath.select_li(7)
+    xpath.upload_file('./media/main.jpg')
+    xpath.download_file()
+
+    xpath.select_li(8)
+    time.sleep(8)

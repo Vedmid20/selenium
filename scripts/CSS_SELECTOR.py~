@@ -13,20 +13,20 @@ def go():
     }
     css = CSSSelector()
     css.go_to_elements()
-    css.select_li(0)
-
-    css.fill_form('userName', 'Gogy', 1)
-    css.fill_form('userEmail', 'gogy@gmail.com', 2)
-    css.fill_form('currentAddress', '213456gfdsaasd', 3)
-    css.fill_form('permanentAddress', 'dsada', 4)
-    css.submit_form()
-
-    css.select_li(1)
-    css.select_checkboxes()
-
-    css.select_li(2)
-    css.select_radiobuttons('yesRadio')
-    css.select_radiobuttons('impressiveRadio')
+    # css.select_li(0)
+    #
+    # css.fill_form('userName', 'Gogy', 1)
+    # css.fill_form('userEmail', 'gogy@gmail.com', 2)
+    # css.fill_form('currentAddress', '213456gfdsaasd', 3)
+    # css.fill_form('permanentAddress', 'dsada', 4)
+    # css.submit_form()
+    #
+    # css.select_li(1)
+    # css.select_checkboxes()
+    #
+    # css.select_li(2)
+    # css.select_radiobuttons('yesRadio')
+    # css.select_radiobuttons('impressiveRadio')
 
     css.select_li(3)
 
